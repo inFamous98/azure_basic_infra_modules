@@ -38,6 +38,7 @@ resource "azurerm_network_interface" "nic" {
 }
 
 resource "azurerm_virtual_machine" "VM" {
+  count = 2
   name                  = "${var.vm_name}"
   resource_group_name =  "${var.resource_group_name}"
   location = "${var.location}"
